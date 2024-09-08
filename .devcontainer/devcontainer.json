@@ -17,9 +17,13 @@
       }
     },
     "updateContentCommand": "[ -f requirements.txt ] && pip3 install --user -r requirements.txt; echo '✅ Packages installed and Requirements met'",
-    "postAttachCommand": "python3 producer.py && python3 consumer.py",
+    "postAttachCommand": "python3 setup.py install && python3 producer.py && python3 consumer.py",
     "containerEnv": {
       "ENV_FILE": "${containerWorkspaceFolder}/.env"
-    }
+    },
+    "hostRequirements": {
+      "memory": "8gb",
+      "cpus": 2
+  }
   }
   
