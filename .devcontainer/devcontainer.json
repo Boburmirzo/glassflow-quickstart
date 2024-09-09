@@ -18,9 +18,7 @@
   },
   "updateContentCommand": "[ -f requirements.txt ] && pip3 install --user -r requirements.txt; echo '✅ Packages installed and Requirements met'",
   "postAttachCommand": "python3 producer.py && python3 consumer.py",
-  // "containerEnv": {
-  //   "ENV_FILE": "${containerWorkspaceFolder}/.env"
-  // },
+  "runArgs": ["--env-file",".devcontainer/devcontainer.env"],
   "secrets": {
     "PIPELINE_ID": {
       "description": "This is your GlassFlow Pipeline ID."
