@@ -1,29 +1,36 @@
 {
-    "name": "Python 3",
-    "image": "mcr.microsoft.com/devcontainers/python:1-3.11-bullseye",
-    "customizations": {
-      "codespaces": {
-        "openFiles": [
-          "producer.py",
-          "consumer.py"
-        ]
-      },
-      "vscode": {
-        "settings": {},
-        "extensions": [
-          "ms-python.python",
-          "ms-python.vscode-pylance"
-        ]
-      }
+  "name": "GlassFlow Quickstart",
+  "image": "mcr.microsoft.com/devcontainers/python:1-3.11-bullseye",
+  "customizations": {
+    "codespaces": {
+      "openFiles": [
+        "producer.py",
+        "consumer.py"
+      ]
     },
-    "updateContentCommand": "[ -f requirements.txt ] && pip3 install --user -r requirements.txt; echo '✅ Packages installed and Requirements met'",
-    "postAttachCommand": "python3 setup.py install && python3 producer.py && python3 consumer.py",
-    "containerEnv": {
-      "ENV_FILE": "${containerWorkspaceFolder}/.env"
+    "vscode": {
+      "settings": {},
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance"
+      ]
+    }
+  },
+  "updateContentCommand": "[ -f requirements.txt ] && pip3 install --user -r requirements.txt; echo '✅ Packages installed and Requirements met'",
+  "postAttachCommand": "python3 setup.py install && python3 producer.py && python3 consumer.py",
+  "containerEnv": {
+    "ENV_FILE": "${containerWorkspaceFolder}/.env"
+  },
+  "secrets": {
+    "PIPELINE_ID": {
+      "description": "This is your GlassFlow Pipeline ID."
     },
-    "hostRequirements": {
-      "memory": "8gb",
-      "cpus": 2
+    "PIPELINE_ACCESS_TOKEN": {
+      "description": "This is your GlassFlow Pipeline Access Token."
+    }
+  },
+  "hostRequirements": {
+    "memory": "8gb",
+    "cpus": 2
   }
-  }
-  
+}
