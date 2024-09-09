@@ -1,0 +1,13 @@
+
+tasks:
+  - name: Install Python Dependencies and env variables
+    init: pip install -r requirements.txt
+    command: python3 setup.py install
+
+  - name: Publish and Consume data
+    init: pip install -r requirements.txt
+    command: python3 producer.py & python3 consumer.py
+
+ports:
+  - port: 8501
+    onOpen: open-preview
