@@ -1,9 +1,5 @@
 import glassflow
-from dotenv import load_dotenv
 import os
-
-# Load environment variables from .env file
-load_dotenv()
 
 pipeline_id = os.getenv("PIPELINE_ID")
 pipeline_access_token = os.getenv("ACCESS_TOKEN")
